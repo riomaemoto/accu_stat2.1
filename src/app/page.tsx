@@ -70,7 +70,7 @@ export default function Home() {
 
           <button
             onClick={handleHistoryRecords}
-            className="w-full py-3 md:py-4 bg-gray-600 hover:bg-gray-700 text-white text-base md:text-lg font-semibold rounded-lg transition-colors duration-200 shadow-lg"
+            className="w-full py-3 md:py-4 bg-gray-600 hover:bg-gray-700 text-white text-base md:text-lg font-semibold rounded-lg transition-colors duration-200 shadow-lg px-6"
           >
             History Records
           </button>
