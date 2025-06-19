@@ -77,28 +77,28 @@ export default function ScoreSheet() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-800 via-blue-900 to-gray-900">
       <div className="w-full max-w-[1400px] mx-auto p-6">
-        <div className="flex justify-start mb-8">
+        <div className="flex justify-start mb-4 md:mb-8">
           <button
             onClick={handleBack}
-            className="group relative px-6 py-3 bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 font-semibold rounded-xl shadow-lg hover:shadow-yellow-500/25 hover:scale-105 transition-all duration-300 border border-yellow-300"
+            className="group relative px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 font-semibold rounded-xl shadow-lg hover:shadow-yellow-500/25 hover:scale-105 transition-all duration-300 border border-yellow-300 text-sm md:text-base"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-yellow-300 to-yellow-400 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-300"></span>
             <span className="relative">← Back</span>
           </button>
         </div>
 
-        <div className="flex items-center justify-center mb-8">
-          <div className="bg-gradient-to-r from-gray-800/90 to-gray-700/90 backdrop-blur-sm border border-gray-600/50 rounded-2xl p-6 shadow-2xl">
-            <div className="flex items-center space-x-6">
+        <div className="flex items-center justify-center mb-4 md:mb-8">
+          <div className="bg-gradient-to-r from-gray-800/90 to-gray-700/90 backdrop-blur-sm border border-gray-600/50 rounded-2xl p-3 md:p-6 shadow-2xl">
+            <div className="flex items-center space-x-2 md:space-x-6 flex-wrap gap-2 md:gap-0">
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
-                <span className="text-gray-300 text-sm font-medium">
+                <span className="text-gray-300 text-xs md:text-sm font-medium">
                   Status:
                 </span>
               </div>
 
               <button
-                className={`group relative px-6 py-3 font-semibold rounded-xl transition-all duration-300 border ${
+                className={`group relative px-3 md:px-6 py-2 md:py-3 font-semibold rounded-xl transition-all duration-300 border text-sm md:text-base ${
                   isEditing
                     ? "bg-gradient-to-r from-emerald-600 to-emerald-700 text-white border-emerald-500 hover:shadow-emerald-500/25"
                     : "bg-gradient-to-r from-gray-600 to-gray-700 text-white border-gray-500 hover:shadow-gray-500/25"
@@ -112,9 +112,9 @@ export default function ScoreSheet() {
                       : "bg-gradient-to-r from-gray-500 to-gray-600"
                   }`}
                 ></span>
-                <span className="relative flex items-center space-x-2">
+                <span className="relative flex items-center space-x-1 md:space-x-2">
                   <svg
-                    className="w-4 h-4"
+                    className="w-3 h-3 md:w-4 md:h-4"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -135,18 +135,19 @@ export default function ScoreSheet() {
                       />
                     )}
                   </svg>
-                  <span>{isEditing ? "Editing Mode" : "Read Only"}</span>
+                  <span className="hidden sm:inline">{isEditing ? "Editing Mode" : "Read Only"}</span>
+                  <span className="sm:hidden">{isEditing ? "Edit" : "Read"}</span>
                 </span>
               </button>
 
               <button
                 onClick={handleSave}
-                className="group relative px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-blue-500/25 hover:scale-105 transition-all duration-300 border border-blue-500"
+                className="group relative px-3 md:px-6 py-2 md:py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-blue-500/25 hover:scale-105 transition-all duration-300 border border-blue-500 text-sm md:text-base"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-300"></span>
-                <span className="relative flex items-center space-x-2">
+                <span className="relative flex items-center space-x-1 md:space-x-2">
                   <svg
-                    className="w-4 h-4"
+                    className="w-3 h-3 md:w-4 md:h-4"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -158,17 +159,18 @@ export default function ScoreSheet() {
                       d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"
                     />
                   </svg>
-                  <span>Save Game</span>
+                  <span className="hidden sm:inline">Save Game</span>
+                  <span className="sm:hidden">Save</span>
                 </span>
               </button>
             </div>
           </div>
         </div>
 
-        <div className="p-8">
+        <div className="p-3 md:p-8">
           <Toprow />
 
-          <div className="space-y-4 mt-6">
+          <div className="space-y-2 md:space-y-4 mt-4 md:mt-6">
             <Rowbox
               boxTitle="Game Score"
               left={gameScoreLeftAtom}
