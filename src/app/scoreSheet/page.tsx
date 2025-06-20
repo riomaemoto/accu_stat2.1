@@ -35,6 +35,7 @@ import {
   statAtom,
   toggleAtom,
   readOnlyStatAtom,
+  toastAtom,
 } from "@/app/atom";
 import { AccuStats } from "@/components/accuStat";
 import { AccuStatWithMissSafety } from "@/components/accuStatWithMissSafety";
@@ -43,14 +44,16 @@ import { InGameStats } from "@/components/inGameStats";
 import { Toprow } from "@/components/toprow";
 import { PercentageRowbox } from "@/components/percentageRowbox";
 import { useRouter } from "next/navigation";
-import { useAtom, useAtomValue } from "jotai";
+import { useAtom, useAtomValue, useSetAtom } from "jotai";
 import { sendStatsData, upDateStatsData } from "../supabase";
+import Toast from "@/components/Toast";
 
 export default function ScoreSheet() {
   const saveNewStat = useAtomValue(statAtom);
   const [isEditing, setIsEditing] = useAtom(toggleAtom);
   const router = useRouter();
   const readOnlyValue = useAtomValue(readOnlyStatAtom);
+  const [toast, setToast] = useAtom(toastAtom);
 
   const isViewingExistingStat = saveNewStat.id;
 
@@ -67,13 +70,35 @@ export default function ScoreSheet() {
   };
 
   const handleSave = async () => {
-    if (saveNewStat.id) {
-      await upDateStatsData(saveNewStat);
-    } else {
-      const newStat = await sendStatsData(saveNewStat);
-      if (newStat && newStat.id) {
-        saveNewStat.id = newStat.id;
+    try {
+      if (saveNewStat.id) {
+        await upDateStatsData(saveNewStat);
+        setToast({
+          id: Date.now().toString(),
+          message: "Game updated successfully!",
+          type: "success",
+          isVisible: true,
+        });
+      } else {
+        const newStat = await sendStatsData(saveNewStat);
+        if (newStat && newStat.id) {
+          saveNewStat.id = newStat.id;
+          setToast({
+            id: Date.now().toString(),
+            message: "New game saved successfully!",
+            type: "success",
+            isVisible: true,
+          });
+        }
       }
+    } catch (error) {
+      console.error("Save failed:", error);
+      setToast({
+        id: Date.now().toString(),
+        message: "Failed to save game. Please try again.",
+        type: "error",
+        isVisible: true,
+      });
     }
   };
 
@@ -274,6 +299,15 @@ export default function ScoreSheet() {
           </div>
         </div>
       </div>
+      
+      {toast && (
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          isVisible={toast.isVisible}
+          onClose={() => setToast(null)}
+        />
+      )}
     </div>
   );
 }

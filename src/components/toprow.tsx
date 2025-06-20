@@ -9,7 +9,7 @@ export const Toprow = () => {
     <div className="w-full">
       <div className="w-full max-w-[1400px] flex flex-row items-center justify-center">
         <input
-          className={`w-[105px] md:w-[150px] h-[60px] md:h-[70px] border border-white/20 text-center text-[12px] md:text-[16px] bg-white/10 backdrop-blur-md text-white font-semibold placeholder-gray-300 ${
+          className={`w-[105px] md:w-[150px] h-[60px] md:h-[70px] border border-white/20 text-center text-[16px] bg-white/10 backdrop-blur-md text-white font-semibold placeholder-gray-300 ${
             isEditing ? "" : "cursor-not-allowed"
           }`}
           placeholder="Enter Name"
@@ -24,7 +24,7 @@ export const Toprow = () => {
         </div>
 
         <input
-          className={`w-[105px] md:w-[150px] h-[60px] md:h-[70px] border border-white/20 text-center text-[12px] md:text-[16px] bg-white/10 backdrop-blur-md text-white font-semibold placeholder-gray-300 ${
+          className={`w-[105px] md:w-[150px] h-[60px] md:h-[70px] border border-white/20 text-center text-[16px] bg-white/10 backdrop-blur-md text-white font-semibold placeholder-gray-300 ${
             isEditing ? "" : "cursor-not-allowed"
           }`}
           placeholder="Enter Name"

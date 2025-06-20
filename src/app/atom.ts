@@ -149,3 +149,12 @@ export const breakAndRunLeftAtom = focusAtom(statAtom, (optic) =>
 export const breakAndRunRightAtom = focusAtom(statAtom, (optic) =>
   optic.prop("breakAndRun").prop("right")
 );
+
+export type ToastNotification = {
+  id: string;
+  message: string;
+  type: 'success' | 'error' | 'info';
+  isVisible: boolean;
+};
+
+export const toastAtom = atom<ToastNotification | null>(null);
