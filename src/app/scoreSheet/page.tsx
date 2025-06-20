@@ -66,11 +66,14 @@ export default function ScoreSheet() {
     router.push("/");
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     if (saveNewStat.id) {
-      upDateStatsData(saveNewStat);
+      await upDateStatsData(saveNewStat);
     } else {
-      sendStatsData(saveNewStat);
+      const newStat = await sendStatsData(saveNewStat);
+      if (newStat && newStat.id) {
+        saveNewStat.id = newStat.id;
+      }
     }
   };
 

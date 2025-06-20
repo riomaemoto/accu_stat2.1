@@ -1,5 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 import { StatType } from "./atom";
+import { error } from "console";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -12,7 +13,14 @@ export const fetchStatsData = async () => {
 };
 
 export const sendStatsData = async (statsData: StatType) => {
-  await supabase.from("statsData").insert(statsData);
+  const { data, error } = await supabase
+    .from("statsData")
+    .insert(statsData)
+    .select();
+  if (error) {
+    throw new Error("Failed to send stats data");
+  }
+  return data[0];
 };
 
 export const upDateStatsData = async (statsData: StatType) => {
