@@ -103,16 +103,17 @@ export const PercentageRowbox = ({ boxTitle, left, right }: Props) => {
           {/* Corner pocket decorations */}
           <div className="absolute -top-0.5 md:-top-1 -left-0.5 md:-left-1 w-2 md:w-3 h-2 md:h-3 bg-black rounded-full border border-amber-700"></div>
           <div className="absolute -top-0.5 md:-top-1 -right-0.5 md:-right-1 w-2 md:w-3 h-2 md:h-3 bg-black rounded-full border border-amber-700"></div>
+          <div className="absolute -top-[4px] md:-top-1.5 left-1/2 -translate-x-1/2 w-2 md:w-3 h-2 md:h-3 bg-black rounded-full border border-amber-700"></div>
           <div className="absolute -bottom-0.5 md:-bottom-1 -left-0.5 md:-left-1 w-2 md:w-3 h-2 md:h-3 bg-black rounded-full border border-amber-700"></div>
           <div className="absolute -bottom-0.5 md:-bottom-1 -right-0.5 md:-right-1 w-2 md:w-3 h-2 md:h-3 bg-black rounded-full border border-amber-700"></div>
+          <div className="absolute -bottom-1 md:-bottom-2 left-1/2 -translate-x-1/2 w-2 md:w-3 h-2 md:h-3 bg-black rounded-full border border-amber-700"></div>
 
           {/* Center title */}
           <div className="absolute inset-0 flex items-center justify-center px-1 md:px-2">
             <span
-              className="text-yellow-300 font-bold text-sm md:text-lg text-center drop-shadow-lg"
+              className="text-yellow-300 font-bold text-md md:text-lg text-center drop-shadow-lg"
               style={{
-                textShadow:
-                  "2px 2px 0px black, -2px -2px 0px black, 2px -2px 0px black, -2px 2px 0px black",
+                textShadow: "2px 2px 3px black",
               }}
             >
               {boxTitle}

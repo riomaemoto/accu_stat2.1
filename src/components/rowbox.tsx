@@ -63,7 +63,7 @@ export const Rowbox = ({ boxTitle, left, right, readOnly }: Props) => {
           </button>
         </div>
 
-        <div className="border border-white/20 w-[70px] md:w-[100px] h-[80px] md:h-[90px] flex items-center justify-center bg-white/10 backdrop-blur-md text-white font-semibold text-sm md:text-base">
+        <div className="border border-white/20 w-[47px] md:w-[100px] h-[80px] md:h-[90px] flex items-center justify-center bg-white/10 backdrop-blur-md text-white font-semibold text-sm md:text-base">
           {isEditing ? leftNumber : readOnly.left}
         </div>
 
@@ -72,19 +72,21 @@ export const Rowbox = ({ boxTitle, left, right, readOnly }: Props) => {
           {/* Pool table felt texture */}
           <div className="absolute inset-1 md:inset-2 bg-gradient-to-br from-green-500 to-green-700 rounded opacity-40"></div>
 
-          {/* Corner pocket decorations */}
+          {/* Corner and middle pocket decorations */}
           <div className="absolute -top-0.5 md:-top-1 -left-0.5 md:-left-1 w-2 md:w-3 h-2 md:h-3 bg-black rounded-full border border-amber-700"></div>
           <div className="absolute -top-0.5 md:-top-1 -right-0.5 md:-right-1 w-2 md:w-3 h-2 md:h-3 bg-black rounded-full border border-amber-700"></div>
+          <div className="absolute -top-[4px] md:-top-1.5 left-1/2 -translate-x-1/2 w-2 md:w-3 h-2 md:h-3 bg-black rounded-full border border-amber-700"></div>
+
           <div className="absolute -bottom-0.5 md:-bottom-1 -left-0.5 md:-left-1 w-2 md:w-3 h-2 md:h-3 bg-black rounded-full border border-amber-700"></div>
           <div className="absolute -bottom-0.5 md:-bottom-1 -right-0.5 md:-right-1 w-2 md:w-3 h-2 md:h-3 bg-black rounded-full border border-amber-700"></div>
+          <div className="absolute -bottom-[4px] md:-bottom-2 left-1/2 -translate-x-1/2 w-2 md:w-3 h-2 md:h-3 bg-black rounded-full border border-amber-700"></div>
 
           {/* Center title */}
           <div className="absolute inset-0 flex items-center justify-center px-1 md:px-2">
             <span
-              className="text-yellow-300 font-bold text-sm md:text-lg text-center drop-shadow-lg"
+              className="text-yellow-300 font-bold text-md md:text-lg text-center drop-shadow-lg"
               style={{
-                textShadow:
-                  "2px 2px 0px black, -2px -2px 0px black, 2px -2px 0px black, -2px 2px 0px black",
+                textShadow: "2px 2px 3px black",
               }}
             >
               {boxTitle}
@@ -92,7 +94,7 @@ export const Rowbox = ({ boxTitle, left, right, readOnly }: Props) => {
           </div>
         </div>
 
-        <div className="border border-white/20 w-[70px] md:w-[100px] h-[80px] md:h-[90px] flex items-center justify-center bg-white/10 backdrop-blur-md text-white font-semibold text-sm md:text-base">
+        <div className="border border-white/20 w-[47px] md:w-[100px] h-[80px] md:h-[90px] flex items-center justify-center bg-white/10 backdrop-blur-md text-white font-semibold text-sm md:text-base">
           {isEditing ? rightNumber : readOnly.right}
         </div>
         <div>
