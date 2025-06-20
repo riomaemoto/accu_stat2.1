@@ -63,26 +63,26 @@ export const PercentageRowbox = ({ boxTitle, left, right }: Props) => {
       <div className="w-full max-w-[1400px] flex flex-row items-center justify-center">
         <div>
           <button
-            className={`border border-solid w-[35px] md:w-[50px] h-[35px] md:h-[40px] flex items-center justify-center my-1 md:my-2 text-sm md:text-base ${
+            className={`border-2 border-black w-[35px] md:w-[50px] h-[35px] md:h-[40px] flex items-center justify-center my-1 md:my-2 text-sm md:text-base rounded-lg transition-all duration-200 transform hover:scale-105 ${
               isEditing
-                ? "bg-green-400 hover:bg-green-500"
-                : "bg-gray-300 cursor-not-allowed"
+                ? "bg-gradient-to-br from-green-400 to-green-500 hover:from-green-500 hover:to-green-600 text-white shadow-lg hover:shadow-green-400/50"
+                : "bg-gray-300 cursor-not-allowed opacity-50"
             }`}
             onClick={incrementLeft}
             disabled={!isEditing}
           >
-            +
+            <span className="text-2xl md:text-3xl font-bold text-white">+</span>
           </button>
           <button
-            className={`border border-solid w-[35px] md:w-[50px] h-[35px] md:h-[40px] flex items-center justify-center my-1 md:my-2 text-sm md:text-base ${
+            className={`border-2 border-black w-[35px] md:w-[50px] h-[35px] md:h-[40px] flex items-center justify-center my-1 md:my-2 text-sm md:text-base rounded-lg transition-all duration-200 transform hover:scale-105 ${
               isEditing
-                ? "bg-red-300 hover:bg-red-400"
-                : "bg-gray-300 cursor-not-allowed"
+                ? "bg-gradient-to-br from-red-400 to-red-500 hover:from-red-500 hover:to-red-600 text-white shadow-lg hover:shadow-red-400/50"
+                : "bg-gray-300 cursor-not-allowed opacity-50"
             }`}
             onClick={decrementLeft}
             disabled={!isEditing}
           >
-            -
+            <span className="text-2xl md:text-3xl font-bold text-white">−</span>
           </button>
         </div>
 
@@ -131,26 +131,26 @@ export const PercentageRowbox = ({ boxTitle, left, right }: Props) => {
 
         <div>
           <button
-            className={`border border-solid w-[35px] md:w-[50px] h-[35px] md:h-[40px] flex items-center justify-center my-1 md:my-2 text-sm md:text-base ${
+            className={`border-2 border-black w-[35px] md:w-[50px] h-[35px] md:h-[40px] flex items-center justify-center my-1 md:my-2 text-sm md:text-base rounded-lg transition-all duration-200 transform hover:scale-105 ${
               isEditing
-                ? "bg-green-400 hover:bg-green-500"
-                : "bg-gray-300 cursor-not-allowed"
+                ? "bg-gradient-to-br from-green-400 to-green-500 hover:from-green-500 hover:to-green-600 text-white shadow-lg hover:shadow-green-400/50"
+                : "bg-gray-300 cursor-not-allowed opacity-50"
             }`}
             onClick={incrementRight}
             disabled={!isEditing}
           >
-            +
+            <span className="text-2xl md:text-3xl font-bold text-white">+</span>
           </button>
           <button
-            className={`border border-solid w-[35px] md:w-[50px] h-[35px] md:h-[40px] flex items-center justify-center my-1 md:my-2 text-sm md:text-base ${
+            className={`border-2 border-black w-[35px] md:w-[50px] h-[35px] md:h-[40px] flex items-center justify-center my-1 md:my-2 text-sm md:text-base rounded-lg transition-all duration-200 transform hover:scale-105 ${
               isEditing
-                ? "bg-red-300 hover:bg-red-400"
-                : "bg-gray-300 cursor-not-allowed"
+                ? "bg-gradient-to-br from-red-400 to-red-500 hover:from-red-500 hover:to-red-600 text-white shadow-lg hover:shadow-red-400/50"
+                : "bg-gray-300 cursor-not-allowed opacity-50"
             }`}
             onClick={decrementRight}
             disabled={!isEditing}
           >
-            -
+            <span className="text-2xl md:text-3xl font-bold text-white">−</span>
           </button>
         </div>
       </div>
