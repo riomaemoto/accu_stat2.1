@@ -135,8 +135,12 @@ export default function ScoreSheet() {
                       />
                     )}
                   </svg>
-                  <span className="hidden sm:inline">{isEditing ? "Editing Mode" : "Read Only"}</span>
-                  <span className="sm:hidden">{isEditing ? "Edit" : "Read"}</span>
+                  <span className="hidden sm:inline">
+                    {isEditing ? "Editing Mode" : "Read Only"}
+                  </span>
+                  <span className="sm:hidden">
+                    {isEditing ? "Edit" : "Read"}
+                  </span>
                 </span>
               </button>
 
