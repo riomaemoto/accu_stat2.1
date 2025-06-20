@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ACCU STAT",
-  description: "ACCU STAT is a profesional statistics calculator.",
+  title: "Billiards Accuracy Meter",
+  description:
+    "Billiards Accuracy Meter is a profesional statistics calculator for billiards.",
 };
 
 export default function RootLayout({

@@ -37,8 +37,8 @@ import {
   readOnlyStatAtom,
   toastAtom,
 } from "@/app/atom";
-import { AccuStats } from "@/components/accuStat";
-import { AccuStatWithMissSafety } from "@/components/accuStatWithMissSafety";
+import { BilliardsAccuracyMeter } from "@/components/accuStat";
+import { BilliardsAccuracyMeterWithSafety } from "@/components/accuStatWithMissSafety";
 import { Rowbox } from "@/components/rowbox";
 import { InGameStats } from "@/components/inGameStats";
 import { Toprow } from "@/components/toprow";
@@ -294,8 +294,8 @@ export default function ScoreSheet() {
               right={kickingErrorsRightAtom}
               readOnly={readOnlyValue.kickingErrors}
             />
-            <AccuStats />
-            <AccuStatWithMissSafety />
+            <BilliardsAccuracyMeter />
+            <BilliardsAccuracyMeterWithSafety />
           </div>
         </div>
       </div>
