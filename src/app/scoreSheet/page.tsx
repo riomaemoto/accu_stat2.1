@@ -44,7 +44,7 @@ import { InGameStats } from "@/components/inGameStats";
 import { Toprow } from "@/components/toprow";
 import { PercentageRowbox } from "@/components/percentageRowbox";
 import { useRouter } from "next/navigation";
-import { useAtom, useAtomValue, useSetAtom } from "jotai";
+import { useAtom, useAtomValue } from "jotai";
 import { sendStatsData, upDateStatsData } from "../supabase";
 import Toast from "@/components/Toast";
 
@@ -299,7 +299,7 @@ export default function ScoreSheet() {
           </div>
         </div>
       </div>
-      
+
       {toast && (
         <Toast
           message={toast.message}
