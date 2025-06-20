@@ -12,7 +12,7 @@ import {
 } from "@/app/atom";
 import { useAtomValue } from "jotai";
 
-export const BilliardsAccuracyMeter = () => {
+export const BamScore = () => {
   const ballsMissedLeft = useAtomValue(ballsMissedLeftAtom);
   const ballsMissedRight = useAtomValue(ballsMissedRightAtom);
   const unforcedErrorsLeft = useAtomValue(unforcedErrorsLeftAtom);
@@ -24,7 +24,7 @@ export const BilliardsAccuracyMeter = () => {
   const kickingErrorsLeft = useAtomValue(kickingErrorsLeftAtom);
   const kickingErrorsRight = useAtomValue(kickingErrorsRightAtom);
 
-  const accuStatLeft =
+  const bamStatLeft =
     ballsPocketedLeft /
     (ballsPocketedLeft +
       ballsMissedLeft +
@@ -32,7 +32,7 @@ export const BilliardsAccuracyMeter = () => {
       safetyErrorsLeft +
       kickingErrorsLeft);
 
-  const accuStatRight =
+  const bamStatRight =
     ballsPocketedRight /
     (ballsPocketedRight +
       ballsMissedRight +
@@ -44,7 +44,7 @@ export const BilliardsAccuracyMeter = () => {
     <div className="w-full flex">
       <div className="w-full max-w-[1400px] flex flex-row items-center justify-center">
         <div className="border border-white/20 w-[70px] md:w-[100px] h-[70px] md:h-[80px] flex items-center justify-center bg-white/10 backdrop-blur-md text-white font-semibold text-xs md:text-base">
-          {isNaN(accuStatLeft) ? 0 : accuStatLeft.toFixed(3)}
+          {isNaN(bamStatLeft) ? 0 : bamStatLeft.toFixed(3)}
         </div>
 
         {/* Luxury Billiards Accuracy Meter Design */}
@@ -74,7 +74,7 @@ export const BilliardsAccuracyMeter = () => {
         </div>
 
         <div className="border border-white/20 w-[70px] md:w-[100px] h-[70px] md:h-[80px] flex items-center justify-center bg-white/10 backdrop-blur-md text-white font-semibold text-xs md:text-base">
-          {isNaN(accuStatRight) ? 0 : accuStatRight.toFixed(3)}
+          {isNaN(bamStatRight) ? 0 : bamStatRight.toFixed(3)}
         </div>
       </div>
     </div>

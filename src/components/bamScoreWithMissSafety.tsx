@@ -14,7 +14,7 @@ import {
 } from "@/app/atom";
 import { useAtomValue } from "jotai";
 
-export const BilliardsAccuracyMeterWithSafety = () => {
+export const BamScoreWithMissSafety = () => {
   const ballsMissedLeft = useAtomValue(ballsMissedLeftAtom);
   const ballsMissedRight = useAtomValue(ballsMissedRightAtom);
   const unforcedErrorsLeft = useAtomValue(unforcedErrorsLeftAtom);
@@ -30,7 +30,7 @@ export const BilliardsAccuracyMeterWithSafety = () => {
     ballsMissedWithSafetyRightAtom
   );
 
-  const accuStatLeft =
+  const bamScoreLeft =
     ballsPocketedLeft /
     (ballsPocketedLeft +
       ballsMissedLeft +
@@ -39,7 +39,7 @@ export const BilliardsAccuracyMeterWithSafety = () => {
       kickingErrorsLeft +
       ballsMissedWithSafetyLeft);
 
-  const accuStatRight =
+  const bamScoreRight =
     ballsPocketedRight /
     (ballsPocketedRight +
       ballsMissedRight +
@@ -52,10 +52,10 @@ export const BilliardsAccuracyMeterWithSafety = () => {
     <div className="w-full flex">
       <div className="w-full max-w-[1400px] flex flex-row items-center justify-center">
         <div className="border border-white/20 w-[70px] md:w-[100px] h-[70px] md:h-[80px] flex items-center justify-center bg-white/10 backdrop-blur-md text-white font-semibold text-xs md:text-base">
-          {isNaN(accuStatLeft) ? 0 : accuStatLeft.toFixed(3)}
+          {isNaN(bamScoreLeft) ? 0 : bamScoreLeft.toFixed(3)}
         </div>
 
-        {/* Premium ACCU-STAT with Miss Safety Design */}
+        {/* Premium Billiards Accuracy Meter with Miss Safety Design */}
         <div className="relative w-[160px] md:w-[250px] h-[70px] md:h-[80px] bg-gradient-to-br from-emerald-800 via-teal-800 to-emerald-900 rounded-xl border-2 md:border-4 border-emerald-400 shadow-2xl overflow-hidden">
           {/* Tech pattern background */}
           <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/20 via-transparent to-teal-900/30"></div>
@@ -85,7 +85,7 @@ export const BilliardsAccuracyMeterWithSafety = () => {
         </div>
 
         <div className="border border-white/20 w-[70px] md:w-[100px] h-[70px] md:h-[80px] flex items-center justify-center bg-white/10 backdrop-blur-md text-white font-semibold text-xs md:text-base">
-          {isNaN(accuStatRight) ? 0 : accuStatRight.toFixed(3)}
+          {isNaN(bamScoreRight) ? 0 : bamScoreRight.toFixed(3)}
         </div>
       </div>
     </div>

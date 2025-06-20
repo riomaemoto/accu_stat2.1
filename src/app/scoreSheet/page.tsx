@@ -37,8 +37,8 @@ import {
   readOnlyStatAtom,
   toastAtom,
 } from "@/app/atom";
-import { BilliardsAccuracyMeter } from "@/components/accuStat";
-import { BilliardsAccuracyMeterWithSafety } from "@/components/accuStatWithMissSafety";
+import { BamScore } from "@/components/bamScore";
+import { BamScoreWithMissSafety } from "@/components/bamScoreWithMissSafety";
 import { Rowbox } from "@/components/rowbox";
 import { InGameStats } from "@/components/inGameStats";
 import { Toprow } from "@/components/toprow";
@@ -228,7 +228,7 @@ export default function ScoreSheet() {
               readOnly={readOnlyValue.scratchesonBreak}
             />
             <PercentageRowbox
-              boxTitle="Ball Made on Break"
+              boxTitle="Balls Made on Break"
               left={ballsMadeonBreakLeftAtom}
               right={ballsMadeonBreakRightAtom}
               readOnly={readOnlyValue.ballsMadeonBreak}
@@ -294,8 +294,8 @@ export default function ScoreSheet() {
               right={kickingErrorsRightAtom}
               readOnly={readOnlyValue.kickingErrors}
             />
-            <BilliardsAccuracyMeter />
-            <BilliardsAccuracyMeterWithSafety />
+            <BamScore />
+            <BamScoreWithMissSafety />
           </div>
         </div>
       </div>
